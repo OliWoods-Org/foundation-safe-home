@@ -26,7 +26,7 @@ export const HazardReportSchema = z.object({
   hazards: z.object({
     lead: z.object({ score: z.number(), probability: z.number(), factors: z.array(z.string()), recommendation: z.string() }),
     asbestos: z.object({ score: z.number(), probability: z.number(), factors: z.array(z.string()), recommendation: z.string() }),
-    radon: z.object({ score: z.number(), probability: z.number(), epaZone: z.enum(['zone1_high', 'zone2_moderate', 'zone3_low']).optional(), recommendation: z.string() }),
+    radon: z.object({ score: z.number(), probability: z.number(), epaZone: z.enum(['zone1_high', 'zone2_moderate', 'zone3_low']).optional(), factors: z.array(z.string()), recommendation: z.string() }),
     mold: z.object({ score: z.number(), probability: z.number(), factors: z.array(z.string()), recommendation: z.string() }),
   }),
   childVulnerability: z.object({ atRisk: z.boolean(), urgency: z.string(), actions: z.array(z.string()) }),
